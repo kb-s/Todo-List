@@ -1,38 +1,46 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     display: flex;
     justify-content: center;
 }
-.container{
+::-webkit-scrollbar{
+    width: 0;
+}
+.container {
     display: flex;
     flex-direction: column;
+    min-height: 400px;
     height: 70vh;
     width: 700px;
     justify-content: flex-start;
     margin-top: 20vh;
     background-color: #ffe5d9;
     border-radius: 0.4rem;
-    
+
 }
-.top-sec{
+
+.top-sec {
     display: flex;
     align-items: center;
     background-color: #eb88c6;
     padding: 4vh 0;
     border-radius: 0.4rem;
 }
-.add-sec{
+
+.add-sec {
     display: flex;
     justify-content: space-around;
     width: 100%;
     align-items: center;
     margin: 1vh 0;
 }
-#add-box{
+
+#add-box {
     width: 60%;
     padding: 0.5rem;
     font-size: 1.5rem;
@@ -40,7 +48,8 @@ body{
     border: 0.1rem solid;
     background-color: aliceblue;
 }
-#add-btn{
+
+#add-btn {
     width: 20%;
     height: 8vh;
     border-radius: 0.5rem;
@@ -51,14 +60,163 @@ body{
     font-weight: 400;
     cursor: pointer;
 }
-#add-btn:hover{
+
+#add-btn:hover {
     box-shadow: 0px 1px 2px 1px #4f393d;
 }
-.icons{
+
+.content-sec {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+.items {
+    margin-top: 1rem;
+    background-color: #f8ad9d;
+    display: flex;
+    padding: 5% 5%;
+    font-size: 2rem;
+    height: 10vh;
+    margin-inline: 2vh;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: .5rem;
+
+}
+
+.btn-ani {
+
+    animation: btn-animation 15ms ease-in 0s 1;
+}
+
+.icons {
     display: flex;
     gap: 1vh;
 }
 
-.icon{
+.icon {
     min-height: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.629);
+
+}
+
+a:hover {
+
+    transform: scale(1.1);
+    text-shadow: 0px 1px 1px;
+}
+
+.done-btn-ani-type1 {
+
+    animation: done-btn-animation1 .5s cubic-bezier(0.375, 0.885, 0.52, 2.1) 0s 1;
+}
+
+.done-btn-ani-type2 {
+
+    animation: done-btn-animation2 .5s cubic-bezier(0.375, 0.885, 0.52, 2.1) 0s 1;
+}
+
+.fa-regular {
+    cursor: pointer;
+}
+
+@keyframes done-btn-animation1 {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.4);
+
+    }
+
+    100% {
+        transform: scale(1);
+        color: white;
+    }
+}
+
+@keyframes done-btn-animation2 {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.4);
+
+    }
+
+    100% {
+        transform: scale(1);
+        color: rgba(0, 0, 0, 0.629);
+    }
+}
+
+.del-btn-ani {
+
+    animation: done-btn-animation .5s cubic-bezier(0.375, 0.885, 0.52, 2.1) 0s 1;
+}
+
+@keyframes del-btn-animation {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.4);
+
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes btn-animation {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.6);
+    }
+
+    100% {
+
+        transform: scale(1);
+    }
+}
+
+
+
+@media screen and (max-width: 800px) {
+
+    .container {
+        width: 400px;
+        min-width: 400px;
+
+    }
+
+    .add-sec {
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    #add-box {
+        width: 90%;
+    }
 }
